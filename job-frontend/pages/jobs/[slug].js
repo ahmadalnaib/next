@@ -1,7 +1,8 @@
+import Layout from '../../components/Layout';
 export default function JobPage() {
   return (
-    <div>
+    <Layout>
       <h1>my job</h1>
-    </div>
-  )
+    </Layout>
+  );
 }
