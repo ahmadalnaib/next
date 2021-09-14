@@ -1,9 +1,12 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Header from './Header';
 import Footer from './Footer';
-import stytes from '@/styles/Layout.module.css'
+import Showcase from './Showcase';
+import stytes from '@/styles/Layout.module.css';
 
 export default function Layout({ title, keywords, description, children }) {
+  const router = useRouter();
   return (
     <div>
       <Head>
@@ -11,9 +14,10 @@ export default function Layout({ title, keywords, description, children }) {
         <meta name='description' content={description} />
         <meta name='keywords' content={keywords} />
       </Head>
-      <Header/>
+      <Header />
+     {router.pathname=== '/' &&<Showcase/>}
       <div className={stytes.container}>{children}</div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
